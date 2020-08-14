@@ -1,0 +1,21 @@
+# RNA Sequencing Environment
+The RNAseq_env folder acts as an environment for all RNAseq processing/storage for raw reads, reference sequences, and metadata
+
+## 3 core commands:
+gen_refseqs.sh
+initialize.sh
+run_pipeline.sh
+
+## gen_refseqs.sh <folder_name> <organism_name> <database_sequences_came_from>
+Requires inputs
+folder name: will be specified when the directory structure for a new RNAseq project is initialized
+organism name: used as a prefix to call indexed .fasta files
+database: where sequences came from, a date is added so that all metadata is retained improving reproducibility.
+
+## The user must add additional reference sequences:
+A gene transfer file (.gtf/.gff) is added to the _gtf_file directory
+One or more .fasta files containing reference sequences the RNAseq reads will be aligned against are added to the __fasta_map_sequences directory
+
+A directory in __metadata/ref_seqs/ is created under the folder_name
+reference sequences are moved into the new directory, .fasta sequences into the subdirectory database_date_mapped_sequences
+.fasta sequences are concatenated together and indexed, saving the indexed files under a subdirectory labelled by bowtie2_organism. 

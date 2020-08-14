@@ -1,0 +1,23 @@
+if [[ ! -f $gtf ]]; then
+  echo "command 1 must be a valid gtf file
+  example: <path/to/file.gtf> <path/to/dir_with_fasta_seqs> <organism name>
+  Exiting..."
+#Check to see that all input is correct
+elif [[ ! -d $map_seqs ]]; then
+  echo "command 2 must be a valid directory with fasta files in it
+example: <path/to/file.gtf> <path/to/dir_with_fasta_seqs> <organism name>
+Exiting..."
+  exit 1
+elif [[ -z $project_name ]]; then
+  echo "specify the organisms name in command 3. \n
+example: <path/to/file.gtf> <path/to/dir_with_fasta_seqs> <organism name>
+Exiting..."
+  exit 1
+elif [[ -z $project_name ]]; then
+  echo "specify the file name in command 3. \n
+example: <path/to/file.gtf> <path/to/dir_with_fasta_seqs> <organism name>
+Exiting..."
+  exit 1
+else
+  echo "creating ref_seqs directory"
+fi
