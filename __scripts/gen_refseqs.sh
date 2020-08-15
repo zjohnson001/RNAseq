@@ -14,9 +14,7 @@ if [[ -z $org ]]; then
   echo "organism name not supplied
   command gen_refseqs.sh <organism_name> <database>"
   exit 1
-fi
-
-if [[ -z $db ]]; then
+elif [[ -z $db ]]; then
   echo "database name not supplied
   command: gen_refseqs.sh <organism_name> <database>"
   exit 1
